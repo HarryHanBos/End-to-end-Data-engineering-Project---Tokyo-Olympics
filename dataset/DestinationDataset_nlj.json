@@ -1,0 +1,23 @@
+{
+	"name": "DestinationDataset_nlj",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1Tokyo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "raw-data",
+				"fileSystem": "tokyodatahh12"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
