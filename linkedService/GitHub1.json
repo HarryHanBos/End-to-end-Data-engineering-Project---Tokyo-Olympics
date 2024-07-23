@@ -1,0 +1,13 @@
+{
+	"name": "GitHub1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/HarryHanBos/End-to-end-Data-engineering-Project---Tokyo-Olympics.git",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
