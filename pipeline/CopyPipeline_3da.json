@@ -40,7 +40,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -49,7 +50,6 @@
 						}
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"typeConversion": true,
