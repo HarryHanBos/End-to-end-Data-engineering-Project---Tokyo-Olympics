@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1withDBricks",
+	"name": "databricks_transform_walmart",
 	"properties": {
 		"annotations": []
 	}
