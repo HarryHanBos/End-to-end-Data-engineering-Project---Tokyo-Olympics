@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "tokyodatafactoryhh12"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1Tokyo_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricksDeltaLake1_accessToken": {
+			"value": ""
+		},
+		"AzureFileStorage1_connectionString": {
+			"value": ""
+		},
+		"GitHub1_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1Tokyo_properties_typeProperties_url": {
+			"value": "https://tokyodataharry12.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0618-195638-iym8jnb3"
+		},
+		"GitHub1_properties_typeProperties_url": {
+			"value": "https://github.com/HarryHanBos/End-to-end-Data-engineering-Project---Tokyo-Olympics.git"
+		},
+		"GitHub1_properties_typeProperties_userName": {
+			"value": "harryhanbos"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
