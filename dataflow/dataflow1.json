@@ -12,10 +12,18 @@
 					"name": "MoviesDB"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "MoviewsSink",
+						"type": "DatasetReference"
+					},
+					"name": "sink"
+				}
+			],
 			"transformations": [
 				{
-					"name": "filterYears"
+					"name": "aggregateComedyRating"
 				}
 			],
 			"scriptLines": [
@@ -31,7 +39,15 @@
 				"     inferDriftedColumnTypes: true,",
 				"     limit: 10,",
 				"     ignoreNoFilesFound: false) ~> MoviesDB",
-				"MoviesDB filter(toInteger(year) >= 1910 && toInteger(year) <= 2000 && rlike(genresgenregenre, 'Comedy')) ~> filterYears"
+				"MoviesDB aggregate(groupBy(YEAR),",
+				"     AverageComedyRating = avg(toInteger(Rating))) ~> aggregateComedyRating",
+				"aggregateComedyRating sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink"
 			]
 		}
 	}
