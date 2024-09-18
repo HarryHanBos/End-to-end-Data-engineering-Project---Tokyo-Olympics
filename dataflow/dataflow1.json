@@ -31,7 +31,7 @@
 				"     inferDriftedColumnTypes: true,",
 				"     limit: 10,",
 				"     ignoreNoFilesFound: false) ~> MoviesDB",
-				"MoviesDB filter(toInteger(year)>=1910 && toInteger(year) <=2000 && rlike(genres, 'Comedy')) ~> filterYears"
+				"MoviesDB filter(toInteger(year) >= 1910 && toInteger(year) <= 2000 && rlike(genresgenregenre, 'Comedy')) ~> filterYears"
 			]
 		}
 	}
