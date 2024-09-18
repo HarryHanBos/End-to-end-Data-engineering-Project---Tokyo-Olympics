@@ -6,21 +6,32 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "moviesDBParquet",
+						"referenceName": "MoviesDB",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "MoviesDB"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "filterYears"
+				}
+			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          movies as string,",
+				"          Title as string,",
+				"          genresgenregenre as string,",
+				"          YEAR as string,",
+				"          Rating as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: true,",
 				"     inferDriftedColumnTypes: true,",
 				"     limit: 10,",
-				"     ignoreNoFilesFound: false,",
-				"     format: 'parquet') ~> source1"
+				"     ignoreNoFilesFound: false) ~> MoviesDB",
+				"MoviesDB filter(toInteger(year)>=1910 && toInteger(year) <=2000 && rlike(genres, 'Comedy')) ~> filterYears"
 			]
 		}
 	}
